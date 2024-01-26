@@ -15,7 +15,9 @@ AddEventHandler("tpz_core:isPlayerReady", function()
     -- @param lastname
     -- @param gender
     -- @param dob
-    
+    -- @param job
+    -- @param jobGrade
+
     -- Keep in mind, the following data will be valid ONLY if the character has been selected.
     TriggerEvent("tpz_core:ExecuteServerCallBack", "tpz_core:getPlayerData", function(data)
         print(data.firstname .. " " .. data.lastname)
