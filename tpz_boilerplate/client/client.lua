@@ -17,9 +17,15 @@ AddEventHandler("tpz_core:isPlayerReady", function()
     -- @param dob
     -- @param job
     -- @param jobGrade
+    -- @param identityId
 
     -- Keep in mind, the following data will be valid ONLY if the character has been selected.
     TriggerEvent("tpz_core:ExecuteServerCallBack", "tpz_core:getPlayerData", function(data)
+
+        if data == nil then -- We check if the player data is null. 
+            return
+        end 
+
         print(data.firstname .. " " .. data.lastname)
     end)
 
