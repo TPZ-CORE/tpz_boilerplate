@@ -45,6 +45,12 @@ AddEventHandler("tpz_core:getPlayerJob", function(data)
     -- do action
 end)
 
+-- @param group - returns the current group
+RegisterNetEvent("tpz_core:getPlayerGroup")
+AddEventHandler("tpz_core:getPlayerGroup", function(group)
+    -- to-do nothing
+end)
+
 -- @tpz_leveling : When leveling has loaded after selecting character.
 AddEventHandler("tpz_leveling:isLoaded", function()
     -- to-do your action.
