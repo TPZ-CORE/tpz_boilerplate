@@ -1,4 +1,2 @@
-local TPZ         = {}
-local TPZInv      = exports.tpz_inventory:getInventoryAPI() -- To get and use the Inventory API functions.
-
-TriggerEvent("getTPZCore", function(cb) TPZ = cb end) -- To get the Core Functions.
+local TPZ    = exports.tpz_core:getCoreAPI() -- To retrieve the Core API Functions.
+local TPZInv = exports.tpz_inventory:getInventoryAPI() -- To retreive the Inventory API functions.
