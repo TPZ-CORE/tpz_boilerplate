@@ -1,5 +1,7 @@
 -- https://tpz-core.gitbook.io/tpz-core-documentation/
 
+local TPZ = exports.tpz_core:getCoreAPI() -- To retrieve the Core API Functions (Client).
+
 -- @tpz_core:isPlayerReady : When a character is selected.
 AddEventHandler("tpz_core:isPlayerReady", function()
     -- to-do your action.
@@ -28,6 +30,31 @@ AddEventHandler("tpz_core:isPlayerReady", function()
 
         print(data.firstname .. " " .. data.lastname)
     end)
+
+    -- In case you don't want to use the callback, you can also use the export to retrieve the player data:
+
+    -- @param data.source
+    -- @param data.loaded
+    -- @param data.identifier
+    -- @param data.charIdentifier
+    -- @param data.money
+    -- @param data.gold
+    -- @param data.blackmoney
+    -- @param data.firstname
+    -- @param data.lastname
+    -- @param data.gender
+    -- @param data.dob
+    -- @param data.job
+    -- @param data.jobGrade
+    -- @param data.identityId
+    local data = TPZ.getPlayerClientData()
+
+    -- If player is in session we return the rest of the code.
+    if data == nil then
+       return
+    end
+
+    print(data.firstname .. " " .. data.lastname)
 
 end)
 
